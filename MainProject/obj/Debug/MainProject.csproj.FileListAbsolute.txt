@@ -1,0 +1,8 @@
+D:\GitProject\SampleTest\MainProject\bin\Debug\MainProject.dll
+D:\GitProject\SampleTest\MainProject\bin\Debug\MainProject.pdb
+D:\GitProject\SampleTest\MainProject\bin\Debug\DataStructure.dll
+D:\GitProject\SampleTest\MainProject\bin\Debug\DataStructure.pdb
+D:\GitProject\SampleTest\MainProject\obj\Debug\MainProject.csprojResolveAssemblyReference.cache
+D:\GitProject\SampleTest\MainProject\obj\Debug\MainProject.csproj.CoreCompileInputs.cache
+D:\GitProject\SampleTest\MainProject\obj\Debug\MainProject.dll
+D:\GitProject\SampleTest\MainProject\obj\Debug\MainProject.pdb
