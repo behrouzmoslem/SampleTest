@@ -10,6 +10,13 @@ namespace MainProject.Factories
 {
     public class VisitFactory
     {
+        private IDoctorService doctorService;
+
+        public VisitFactory(IDoctorService doctorService)
+        {
+            this.doctorService = doctorService;
+        }
+
         public TaminPrescriptionDto Create(ReceptionDs receptionDs)
         {
             var result=new TaminPrescriptionDto();
@@ -18,6 +25,17 @@ namespace MainProject.Factories
             result.HeadPrescriptionDto.PrescType = 3;
             result.HeadPrescriptionDto.DocId = int.Parse(receptionDs.Doctor.MedicalNo).ToString();
             result.HeadPrescriptionDto.PrescDate = "13"+receptionDs.ReceptionDate.Replace("/", "");
+            result.HeadPrescriptionDto.SrvType = null;
+            try
+            {
+               result.HeadPrescriptionDto.DocSpec =
+                doctorService.GetTaminSpeciality(Convert.ToInt32(receptionDs.Doctor.MajorExpert.Id)).ToString();
+            }
+            catch (Exception e)
+            {
+              throw new Exception();
+            }
+            
             return result;
         }
     }

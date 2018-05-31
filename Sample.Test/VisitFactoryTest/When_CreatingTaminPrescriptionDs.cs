@@ -1,9 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 using DataStructure;
+using Moq;
 using Sample.Test.Builders;
 using Xunit;
 
@@ -17,6 +18,9 @@ namespace Sample.Test.VisitFactoryTest
         {
             base.Arrage();
             receptionDs=new ReceptionBuilder();
+            visitFactoryFixture.doctorService.AsMock()
+                .Setup(a => a.GetTaminSpeciality(It.IsAny<int?>()))
+                .Returns(1);
         }
 
         public override void Act()
@@ -53,6 +57,19 @@ namespace Sample.Test.VisitFactoryTest
         {
             var expected = receptionDs.Doctor.MedicalNo.Replace("0", "");
             Assert.Equal(expected, result.HeadPrescriptionDto.DocId);
+        }
+
+        [Fact]
+        public void Then_Tamin_Visit_Service_Type_Is_Null()
+        {
+            Assert.Equal(null,result.HeadPrescriptionDto.SrvType);
+        }
+
+        [Fact]
+        public void Then_Tamin_Visit_DoctorSpect_Is_Exist()
+        {
+            var expect = visitFactoryFixture.doctorService.GetTaminSpeciality(1);
+            Assert.Equal(expect.ToString(),result.HeadPrescriptionDto.DocSpec);
         }
     }
 }

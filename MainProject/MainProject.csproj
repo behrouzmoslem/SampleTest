@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Entities\Destination\TaminDetail.cs" />
     <Compile Include="Entities\Destination\TaminHeader.cs" />
+    <Compile Include="Factories\IDoctorService.cs" />
     <Compile Include="Factories\VisitFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

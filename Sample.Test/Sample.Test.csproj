@@ -77,14 +77,14 @@
     <Compile Include="Builders\Builder.cs" />
     <Compile Include="AAA.cs" />
     <Compile Include="Builders\ReceptionBuilder.cs" />
+    <Compile Include="Fixtures\VisitFactoryFixture.cs" />
     <Compile Include="MoqExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VisitFactoryTest\Given_VisitFactory.cs" />
     <Compile Include="VisitFactoryTest\When_CreatingTaminPrescriptionDs.cs" />
+    <Compile Include="VisitFactoryTest\When_CreatingTaminPrescriptionDs_With_Invalid_Doctor_Spec.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Fixtures\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
